@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using RhythmReader;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class LevelPlayer : MonoBehaviour
 {
@@ -20,9 +21,11 @@ public class LevelPlayer : MonoBehaviour
     [SerializeField] private int obstacleLookahead;
     [SerializeField] private int obstacleKeepBeforeCull;
     [SerializeField] private GameObject obstaclePrefab;
+    [SerializeField] private int rootKeepBeforeCull;
     [SerializeField] private float baselineY;
     [SerializeField] private Player player;
     [SerializeField] private OneShotPlayer oneShotPlayer;
+    [SerializeField] private GameObject rootPrefab;
 
     private float _levelBpm;
     private bool _started;
@@ -30,13 +33,17 @@ public class LevelPlayer : MonoBehaviour
     private int _curObstacleTimestampId;
     private float _endFadeinTime;
     private int _curBeat;
+    private ObstacleTypes previousInput;
     private Timestamp[] _timestamps;
     private readonly List<Timestamp> _gameFlowTimestamps = new();
     private readonly List<Timestamp> _obstacleTimestamps = new();
     private readonly List<(Timestamp, GameObject)> _nextLookaheadObstacles = new();
-    
+    private readonly List<GameObject> _rootHistory = new();
+    private float millisPerBeat;
+
     void Start()
     {
+        millisPerBeat = ((60f / songBpm) * 1000f);
         rbmReader.LoadLevel(levelRbmPath);
         _timestamps = rbmReader.GetRbmData().Timestamps;
         
@@ -53,7 +60,6 @@ public class LevelPlayer : MonoBehaviour
             }
         }
         
-        
         player.SetBaselineY(baselineY);
         
         Setup();
@@ -61,7 +67,6 @@ public class LevelPlayer : MonoBehaviour
 
     private void Update()
     {
-        var mspb = ((60f / _levelBpm) * 1000f);
         if (!_started)
         {
             if (Input.anyKey)
@@ -82,6 +87,7 @@ public class LevelPlayer : MonoBehaviour
             DoBeatIndicator();
             if (_curObstacleTimestampId >= _obstacleTimestamps.Count)
             {
+                Debug.Log("Clear!");
                 // Do nothing, level over
             }
             else if (_curLevelTime > _obstacleTimestamps[_curObstacleTimestampId].Time + graceTimeMs)
@@ -126,19 +132,29 @@ public class LevelPlayer : MonoBehaviour
                 _curObstacleTimestampId++;
             }
 
-            if (_curBeat < Mathf.Floor(_curLevelTime / mspb))
+            if (_curBeat < Mathf.Floor(_curLevelTime / millisPerBeat))
             {
                 OnBeat();
                 _curBeat++;
             }
             RenderObstacles();
+            RenderRoots();
         }
     }
 
     private void OnBeat()
     {
-        oneShotPlayer.PlayRootGrowth();
-        player.OnBeat();
+        //oneShotPlayer.PlayRootGrowth();
+        var currentRoot = _rootHistory[0];
+        _rootHistory.Add(currentRoot);
+        _rootHistory.RemoveAt(0);
+
+        var rootComp = currentRoot.GetComponent<Root>();
+        var currentInput = InputDecoder.DecodeInput();
+        rootComp.StopVfx();
+        rootComp.ConfigureVfx(previousInput, currentInput);
+        rootComp.StartVfx();
+        previousInput = currentInput;
     }
 
     private void DoBeatIndicator()
@@ -152,20 +168,33 @@ public class LevelPlayer : MonoBehaviour
     // TODO Temp
     private void RenderObstacles()
     {
-        var mspb = ((60f / _levelBpm) * 1000f);
         for (var i = 0; i < obstacleKeepBeforeCull + obstacleLookahead; i++)
         {
             if(i >= _nextLookaheadObstacles.Count || _nextLookaheadObstacles[i].Item1 == null) continue;
-            var beatsUntil = Mathf.Ceil((_nextLookaheadObstacles[i].Item1.Time - _curLevelTime) / mspb);
+            var beatsUntil = Mathf.Ceil((_nextLookaheadObstacles[i].Item1.Time - _curLevelTime) / millisPerBeat);
             var baseLoc = baselineY - (obstacleVisualSpacing * beatsUntil);
             var smoothLoc = baseLoc - (obstacleVisualSpacing * cameraLerp.Evaluate(
-                (((_nextLookaheadObstacles[i].Item1.Time - _curLevelTime) / mspb) + obstacleKeepBeforeCull) % 1));
+                (((_nextLookaheadObstacles[i].Item1.Time - _curLevelTime) / millisPerBeat) + obstacleKeepBeforeCull) % 1));
             _nextLookaheadObstacles[i].Item2.transform.position = new Vector3(0, smoothLoc, 0);
         }
-        var baseLoc2 = baselineY - (obstacleVisualSpacing * _curBeat);
+        /*var baseLoc2 = baselineY - (obstacleVisualSpacing * _curBeat);
         var smoothLoc2 = baseLoc2 - (obstacleVisualSpacing * cameraLerp.Evaluate(
             (((mspb * (_curBeat + 1) - _curLevelTime) / mspb) + obstacleKeepBeforeCull) % 1));
-        player.transform.position = new Vector3(0, smoothLoc2, 0);
+        player.transform.position = new Vector3(0, smoothLoc2, 0);*/
+    }
+
+    private void RenderRoots()
+    {
+        for (var i = 0; i < rootKeepBeforeCull; i++)
+        {
+            if(_rootHistory[i] is null) continue;
+            var beatsSince = rootKeepBeforeCull - i;
+            var baseLocation = baselineY + (obstacleVisualSpacing * beatsSince);
+            var smoothLocation = baseLocation + (obstacleVisualSpacing * cameraLerp.Evaluate(
+                   (_curLevelTime % millisPerBeat)/millisPerBeat));
+            var oldRootPosition = _rootHistory[i].transform.position;
+            _rootHistory[i].transform.position = new Vector3(oldRootPosition.x, smoothLocation, 0);
+        }
     }
     
     private void CorrectInput()
@@ -218,6 +247,7 @@ public class LevelPlayer : MonoBehaviour
         _started = false;
         _levelBpm = songBpm;
         InitializeObstacles();
+        InitializeRoots();
     }
 
     private void InitializeObstacles()
@@ -239,6 +269,19 @@ public class LevelPlayer : MonoBehaviour
             if (nextLookaheadObstacle.Item1 == null) continue;
             nextLookaheadObstacle.Item2.GetComponent<Obstacle>().SetType(nextLookaheadObstacle.Item1.PrefabId);
             nextLookaheadObstacle.Item2.SetActive(false);
+        }
+    }
+    
+    private void InitializeRoots()
+    {
+        foreach (var root in _rootHistory)
+        {
+            Destroy(root);
+        }
+        _rootHistory.Clear();
+        for (var i = 0; i < rootKeepBeforeCull; i++)
+        {
+            _rootHistory.Add(Instantiate(rootPrefab));
         }
     }
 
