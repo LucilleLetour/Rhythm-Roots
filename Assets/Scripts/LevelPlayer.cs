@@ -138,6 +138,7 @@ public class LevelPlayer : MonoBehaviour
     private void OnBeat()
     {
         oneShotPlayer.PlayRootGrowth();
+        player.OnBeat();
     }
 
     private void DoBeatIndicator()
@@ -151,16 +152,20 @@ public class LevelPlayer : MonoBehaviour
     // TODO Temp
     private void RenderObstacles()
     {
+        var mspb = ((60f / _levelBpm) * 1000f);
         for (var i = 0; i < obstacleKeepBeforeCull + obstacleLookahead; i++)
         {
             if(i >= _nextLookaheadObstacles.Count || _nextLookaheadObstacles[i].Item1 == null) continue;
-            var mspb = ((60f / _levelBpm) * 1000f);
             var beatsUntil = Mathf.Ceil((_nextLookaheadObstacles[i].Item1.Time - _curLevelTime) / mspb);
             var baseLoc = baselineY - (obstacleVisualSpacing * beatsUntil);
             var smoothLoc = baseLoc - (obstacleVisualSpacing * cameraLerp.Evaluate(
                 (((_nextLookaheadObstacles[i].Item1.Time - _curLevelTime) / mspb) + obstacleKeepBeforeCull) % 1));
             _nextLookaheadObstacles[i].Item2.transform.position = new Vector3(0, smoothLoc, 0);
         }
+        var baseLoc2 = baselineY - (obstacleVisualSpacing * _curBeat);
+        var smoothLoc2 = baseLoc2 - (obstacleVisualSpacing * cameraLerp.Evaluate(
+            (((mspb * (_curBeat + 1) - _curLevelTime) / mspb) + obstacleKeepBeforeCull) % 1));
+        player.transform.position = new Vector3(0, smoothLoc2, 0);
     }
     
     private void CorrectInput()

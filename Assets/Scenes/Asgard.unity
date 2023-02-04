@@ -154,6 +154,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftPlayer: {fileID: 1015139486}
   rightPlayer: {fileID: 516522481}
+  growM_M: {fileID: 8926484042661614526, guid: 93d49f34024a3904e81d1a021d799326, type: 3}
+  growM_L: {fileID: 8926484042661614526, guid: 1fb3b35f229b03843947ffc4864683a6, type: 3}
+  growM_R: {fileID: 8926484042661614526, guid: 4d7f9b56f05d9344fb5f11b713a7923e, type: 3}
+  growM_S: {fileID: 8926484042661614526, guid: 8af51eff904039a4799175e0e3445fa9, type: 3}
+  growL_M: {fileID: 0}
+  growL_L: {fileID: 8926484042661614526, guid: 93d49f34024a3904e81d1a021d799326, type: 3}
+  growL_R: {fileID: 8926484042661614526, guid: 02f4da3fedfbe32479c618591c2adcbd, type: 3}
+  growL_S: {fileID: 8926484042661614526, guid: cadb9153cf3e26b47b4f4551adaca452, type: 3}
+  growR_M: {fileID: 0}
+  growR_L: {fileID: 0}
+  growR_R: {fileID: 0}
+  growR_S: {fileID: 0}
+  growS_M: {fileID: 0}
+  growS_L: {fileID: 0}
+  growS_R: {fileID: 0}
+  growS_S: {fileID: 0}
+  branchPrefab: {fileID: 8739645952631196576, guid: a44396082d1906443a81bc980f441425, type: 3}
+  branchSpacing: 20
 --- !u!4 &351331025
 Transform:
   m_ObjectHideFlags: 0
