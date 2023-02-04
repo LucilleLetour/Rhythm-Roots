@@ -23,7 +23,7 @@ namespace RhythmReader
             _fileLines = fileLines;
         }
     
-        public IEnumerator GetRbmData()
+        public RhythmData GetRbmData()
         {
             var data = new RhythmData();
     
@@ -38,14 +38,16 @@ namespace RhythmReader
                 _readPosition++;
             }
                 
-            yield return data;
-        }
-        
-        private void Start()
-        {
-            LoadLevels();
+            return data;
         }
 
+        public void LoadLevel(string path)
+        {
+            var reader = new StreamReader(path);
+            _fileLines = reader.ReadToEnd().Split('\n');
+            reader.Close();
+        }
+        
         private void LoadLevels()
         {
             var asgardReader = new StreamReader(AsgardRBMPath);
