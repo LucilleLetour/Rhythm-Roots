@@ -132,7 +132,7 @@ public class LevelPlayer : MonoBehaviour
                 _curObstacleTimestampId++;
             }
 
-            if (_curBeat < Mathf.Floor(_curLevelTime / millisPerBeat))
+            if (_curBeat < Mathf.Floor(_curLevelTime / millisPerBeat) + graceTimeMs)
             {
                 OnBeat();
                 _curBeat++;
@@ -145,13 +145,14 @@ public class LevelPlayer : MonoBehaviour
     private void OnBeat()
     {
         //oneShotPlayer.PlayRootGrowth();
-        var currentRoot = _rootHistory[0];
+        var currentRoot = Instantiate(rootPrefab);
         _rootHistory.Add(currentRoot);
+        Destroy(_rootHistory[0]);
         _rootHistory.RemoveAt(0);
 
         var rootComp = currentRoot.GetComponent<Root>();
         var currentInput = InputDecoder.DecodeInput();
-        rootComp.StopVfx();
+        //rootComp.StopVfx();
         rootComp.ConfigureVfx(previousInput, currentInput);
         rootComp.StartVfx();
         previousInput = currentInput;
