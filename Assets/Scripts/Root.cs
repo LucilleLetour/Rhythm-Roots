@@ -70,6 +70,7 @@ public class Root : MonoBehaviour
                 };
                 break;
             case LevelPlayer.ObstacleTypes.Split:
+                transform.localScale = new Vector3(-1, 1, 1);
                 visualEffectAsset = to switch
                 {
                     LevelPlayer.ObstacleTypes.Center => growSM,

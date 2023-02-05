@@ -589,14 +589,14 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   beatIndicator: {fileID: 665948307}
-  graceTimeMs: 200
+  graceTimeMs: 0
   obstacleVisualSpacing: 2
   cameraLerp:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: -0.0083351135
-      value: -0.011779785
+      time: 0.26664734
+      value: -0.0046081543
       inSlope: 0.10061204
       outSlope: 0.10061204
       tangentMode: 0
@@ -604,8 +604,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.8786958
     - serializedVersion: 3
-      time: 0.7990062
-      value: 0.3005858
+      time: 0.62674975
+      value: 0.30534655
       inSlope: 1.1226685
       outSlope: 1.1226685
       tangentMode: 0
@@ -613,14 +613,14 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.5192283
     - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 3.6084871
-      outSlope: 3.6084871
+      time: 1.0069283
+      value: 0.99583644
+      inSlope: 0.02607508
+      outSlope: 0.02607508
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.03333336
-      outWeight: 0
+      inWeight: 1
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

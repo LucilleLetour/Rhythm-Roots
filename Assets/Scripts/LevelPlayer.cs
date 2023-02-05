@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using RhythmReader;
 using UnityEngine;
-using UnityEngine.VFX;
+using UnityEngine.UI;
 
 public class LevelPlayer : MonoBehaviour
 {
@@ -26,7 +25,11 @@ public class LevelPlayer : MonoBehaviour
     [SerializeField] private Player player;
     [SerializeField] private OneShotPlayer oneShotPlayer;
     [SerializeField] private GameObject rootPrefab;
-
+    [SerializeField] private int health;
+    [SerializeField] private GameObject winText;
+    [SerializeField] private GameObject loseText;
+    [SerializeField] private GameObject pressToStartText;
+    
     private float _levelBpm;
     private bool _started;
     private float _curLevelTime;
@@ -78,6 +81,7 @@ public class LevelPlayer : MonoBehaviour
                 }
                 musicPlayer.Play();
                 _endFadeinTime = (float)_gameFlowTimestamps.First(x => x.PrefabId == (int)GameControlTypes.EndIntro).Time;
+                pressToStartText.SetActive(false);
             }
         }
         else
@@ -87,8 +91,13 @@ public class LevelPlayer : MonoBehaviour
             DoBeatIndicator();
             if (_curObstacleTimestampId >= _obstacleTimestamps.Count)
             {
-                Debug.Log("Clear!");
-                // Do nothing, level over
+                if (_curLevelTime >= _obstacleTimestamps[^1].Time)
+                {
+                    Debug.Log("Clear!");
+                    // Do nothing, level over
+                    winText.SetActive(true);
+                }
+                
             }
             else if (_curLevelTime > _obstacleTimestamps[_curObstacleTimestampId].Time + graceTimeMs)
             {
@@ -166,7 +175,6 @@ public class LevelPlayer : MonoBehaviour
         beatIndicator.localScale = Vector3.one * Mathf.Lerp(0.5f, 1, off/halfPoint);
     }
     
-    // TODO Temp
     private void RenderObstacles()
     {
         for (var i = 0; i < obstacleKeepBeforeCull + obstacleLookahead; i++)
@@ -187,6 +195,7 @@ public class LevelPlayer : MonoBehaviour
         for (var i = 0; i < rootKeepBeforeCull; i++)
         {
             if(_rootHistory[i] is null) continue;
+            _rootHistory[i].SetActive(true);
             var beatsSince = rootKeepBeforeCull - i;
             var baseLocation = baselineY + (obstacleVisualSpacing * beatsSince);
             var smoothLocation = baseLocation + (obstacleVisualSpacing * cameraLerp.Evaluate(
@@ -202,8 +211,13 @@ public class LevelPlayer : MonoBehaviour
     }
     
     private void IncorrectInput()
-    { 
+    {
         Hit();
+        health--;
+        if (health <= 0)
+        {
+            Die();
+        }
     }
     
     private void Hit()
@@ -224,6 +238,7 @@ public class LevelPlayer : MonoBehaviour
 
     private IEnumerator DieCoroutine()
     {
+        loseText.SetActive(true);
         var dieLen = 2f;
         var curLen = 0f;
         while (curLen < dieLen)
@@ -233,11 +248,13 @@ public class LevelPlayer : MonoBehaviour
             curLen += Time.deltaTime;
             yield return null;
         }
+        loseText.SetActive(false);
         Setup();
     }
 
     private void Setup()
     {
+        pressToStartText.SetActive(true);
         _curObstacleTimestampId = 0;
         _curLevelTime = 0L;
         musicPlayer.pitch = 1f;
@@ -281,6 +298,7 @@ public class LevelPlayer : MonoBehaviour
         for (var i = 0; i < rootKeepBeforeCull; i++)
         {
             _rootHistory.Add(Instantiate(rootPrefab));
+            _rootHistory[i].SetActive(false);
         }
     }
 
@@ -288,7 +306,7 @@ public class LevelPlayer : MonoBehaviour
     {
         GameControl = 1,
         Obstacles = 2,
-        BpmControl = 3,
+        Water = 3,
     }
 
     enum GameControlTypes
