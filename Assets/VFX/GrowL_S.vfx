@@ -19,8 +19,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: -488
     y: -147
-    width: 3284
-    height: 1436
+    width: 3256
+    height: 1422
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -107,7 +107,7 @@ VisualEffectResource:
   m_Infos:
     m_RendererSettings:
       motionVectorGenerationMode: 0
-      shadowCastingMode: 1
+      shadowCastingMode: 0
       receiveShadows: 0
       reflectionProbeUsage: 0
       lightProbeUsage: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661614604}
-  m_UIPosition: {x: 1790.6285, y: -111.666504}
+  m_UIPosition: {x: 1763, y: -146}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 8926484042661614602}
   m_Children: []
-  m_UIPosition: {x: 849.62854, y: 78.333496}
+  m_UIPosition: {x: 0, y: 2}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661614622}
-  m_UIPosition: {x: 1791.0112, y: 192.90564}
+  m_UIPosition: {x: 1763, y: 159}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -597,7 +597,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 8926484042661614607}
   m_Children: []
-  m_UIPosition: {x: 849.62854, y: 78.333496}
+  m_UIPosition: {x: 0, y: 2}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -659,7 +659,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 1786.6285, y: 490.3335}
+  m_UIPosition: {x: 1759, y: 456}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -697,7 +697,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614649}
   - {fileID: 8926484042661614651}
   - {fileID: 8926484042661614847}
-  m_UIPosition: {x: 1785.6285, y: 621.3335}
+  m_UIPosition: {x: 1758, y: 587}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -1422,7 +1422,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":3163171260390484736,"guid":"6f38faf8591bffe4b996a2e9030a8707","type":3}}'
+      m_SerializableObject: '{"obj":{"fileID":6095841886227617869,"guid":"19e74a4ac7fba2c47a04ab62f5016128","type":3}}'
     m_Space: 2147483647
   m_Property:
     name: mesh
@@ -1480,7 +1480,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 8926484042661614626}
   m_Children: []
-  m_UIPosition: {x: 849.62854, y: 78.333496}
+  m_UIPosition: {x: 0, y: 2}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -1541,7 +1541,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 8926484042661614626}
   m_Children: []
-  m_UIPosition: {x: 898.40015, y: 14.98999}
+  m_UIPosition: {x: 0, y: 77}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -1705,7 +1705,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661614658}
-  m_UIPosition: {x: 2371.6284, y: -111.666504}
+  m_UIPosition: {x: 2344, y: -146}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -1738,7 +1738,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 8926484042661614656}
   m_Children: []
-  m_UIPosition: {x: 684.69354, y: 20.76419}
+  m_UIPosition: {x: 0, y: 2}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -1833,7 +1833,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 2367.6284, y: 490.3335}
+  m_UIPosition: {x: 2340, y: 456}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -1869,7 +1869,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661614678}
-  m_UIPosition: {x: 2371.6284, y: 193.3335}
+  m_UIPosition: {x: 2344, y: 159}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -2206,7 +2206,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 8926484042661614663}
   m_Children: []
-  m_UIPosition: {x: 684.69354, y: 20.76419}
+  m_UIPosition: {x: 0, y: 2}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -2270,7 +2270,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614703}
   - {fileID: 8926484042661614705}
   - {fileID: 8926484042661614852}
-  m_UIPosition: {x: 2366.6284, y: 621.3335}
+  m_UIPosition: {x: 2339, y: 587}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -2994,7 +2994,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":3163171260390484736,"guid":"6f38faf8591bffe4b996a2e9030a8707","type":3}}'
+      m_SerializableObject: '{"obj":{"fileID":6095841886227617869,"guid":"19e74a4ac7fba2c47a04ab62f5016128","type":3}}'
     m_Space: 2147483647
   m_Property:
     name: mesh
@@ -3052,7 +3052,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 8926484042661614680}
   m_Children: []
-  m_UIPosition: {x: 684.69354, y: 20.76419}
+  m_UIPosition: {x: 0, y: 2}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -3113,7 +3113,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 8926484042661614680}
   m_Children: []
-  m_UIPosition: {x: 849.62854, y: 78.333496}
+  m_UIPosition: {x: 0, y: 77}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -4566,7 +4566,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":5512361600001258384,"guid":"3a57057e435b6c34780420663dff4b76","type":3}}'
+      m_SerializableObject: '{"obj":{"fileID":5537957897048989758,"guid":"3d17ac0d9d12e2047a48cbf39525ff86","type":3}}'
     m_Space: 2147483647
   m_Property:
     name: mesh
@@ -5974,7 +5974,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":5512361600001258384,"guid":"3a57057e435b6c34780420663dff4b76","type":3}}'
+      m_SerializableObject: '{"obj":{"fileID":5537957897048989758,"guid":"3d17ac0d9d12e2047a48cbf39525ff86","type":3}}'
     m_Space: 2147483647
   m_Property:
     name: mesh
@@ -6093,7 +6093,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 1219.6285, y: 733.3335}
+  m_UIPosition: {x: 1192, y: 699}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -6149,7 +6149,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 1482.6285, y: 710.3335}
+  m_UIPosition: {x: 1455, y: 676}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -6488,7 +6488,7 @@ MonoBehaviour:
       inputSlot: {fileID: 8926484042661614623}
     - outputSlot: {fileID: 8926484042661614821}
       inputSlot: {fileID: 8926484042661614660}
-    position: {x: 1567.6285, y: 184.3335}
+    position: {x: 1540, y: 150}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661614821
@@ -6869,7 +6869,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":-90.0,"y":0.0,"z":0.0}'
+      m_SerializableObject: '{"x":90.0,"y":0.0,"z":0.0}'
     m_Space: 2147483647
   m_Property:
     name: Angle
@@ -7032,7 +7032,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":-90.0,"y":0.0,"z":0.0}'
+      m_SerializableObject: '{"x":90.0,"y":0.0,"z":0.0}'
     m_Space: 2147483647
   m_Property:
     name: Angle
@@ -7155,7 +7155,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 8926484042661614626}
   m_Children: []
-  m_UIPosition: {x: 152.20276, y: 21.888062}
+  m_UIPosition: {x: 0, y: 188}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -7318,7 +7318,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 8926484042661614680}
   m_Children: []
-  m_UIPosition: {x: 152.20276, y: 21.888062}
+  m_UIPosition: {x: 0, y: 188}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:

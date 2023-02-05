@@ -36,6 +36,7 @@ Material:
     m_Floats:
     - _FresnelStep: 0.41
     - _Grow: 1
+    - _GrowMultiplier: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Scale: -1

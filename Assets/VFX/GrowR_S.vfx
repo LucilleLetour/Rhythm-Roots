@@ -20,7 +20,7 @@ MonoBehaviour:
     x: -488
     y: -147
     width: 3284
-    height: 1436
+    height: 1456
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -107,7 +107,7 @@ VisualEffectResource:
   m_Infos:
     m_RendererSettings:
       motionVectorGenerationMode: 0
-      shadowCastingMode: 1
+      shadowCastingMode: 0
       receiveShadows: 0
       reflectionProbeUsage: 0
       lightProbeUsage: 0
@@ -1422,7 +1422,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":3163171260390484736,"guid":"6f38faf8591bffe4b996a2e9030a8707","type":3}}'
+      m_SerializableObject: '{"obj":{"fileID":6095841886227617869,"guid":"19e74a4ac7fba2c47a04ab62f5016128","type":3}}'
     m_Space: 2147483647
   m_Property:
     name: mesh
@@ -2994,7 +2994,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":3163171260390484736,"guid":"6f38faf8591bffe4b996a2e9030a8707","type":3}}'
+      m_SerializableObject: '{"obj":{"fileID":6095841886227617869,"guid":"19e74a4ac7fba2c47a04ab62f5016128","type":3}}'
     m_Space: 2147483647
   m_Property:
     name: mesh
@@ -4566,7 +4566,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":5512361600001258384,"guid":"3a57057e435b6c34780420663dff4b76","type":3}}'
+      m_SerializableObject: '{"obj":{"fileID":5537957897048989758,"guid":"3d17ac0d9d12e2047a48cbf39525ff86","type":3}}'
     m_Space: 2147483647
   m_Property:
     name: mesh
@@ -5974,7 +5974,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":5512361600001258384,"guid":"3a57057e435b6c34780420663dff4b76","type":3}}'
+      m_SerializableObject: '{"obj":{"fileID":5537957897048989758,"guid":"3d17ac0d9d12e2047a48cbf39525ff86","type":3}}'
     m_Space: 2147483647
   m_Property:
     name: mesh
@@ -6869,7 +6869,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":-90.0,"y":0.0,"z":0.0}'
+      m_SerializableObject: '{"x":90.0,"y":0.0,"z":0.0}'
     m_Space: 2147483647
   m_Property:
     name: Angle
@@ -7032,7 +7032,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":-90.0,"y":0.0,"z":0.0}'
+      m_SerializableObject: '{"x":90.0,"y":0.0,"z":0.0}'
     m_Space: 2147483647
   m_Property:
     name: Angle

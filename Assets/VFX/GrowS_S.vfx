@@ -20,7 +20,7 @@ MonoBehaviour:
     x: -305
     y: -254
     width: 3283
-    height: 1513
+    height: 1533
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -107,7 +107,7 @@ VisualEffectResource:
   m_Infos:
     m_RendererSettings:
       motionVectorGenerationMode: 0
-      shadowCastingMode: 1
+      shadowCastingMode: 0
       receiveShadows: 0
       reflectionProbeUsage: 0
       lightProbeUsage: 0
@@ -3110,7 +3110,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":5512361600001258384,"guid":"3a57057e435b6c34780420663dff4b76","type":3}}'
+      m_SerializableObject: '{"obj":{"fileID":-4411013515898945866,"guid":"cded7daed6dedb24bbb887a5be9e91d9","type":3}}'
     m_Space: 2147483647
   m_Property:
     name: mesh
@@ -3957,7 +3957,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":5512361600001258384,"guid":"3a57057e435b6c34780420663dff4b76","type":3}}'
+      m_SerializableObject: '{"obj":{"fileID":-4411013515898945866,"guid":"cded7daed6dedb24bbb887a5be9e91d9","type":3}}'
     m_Space: 2147483647
   m_Property:
     name: mesh
@@ -4804,7 +4804,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":5512361600001258384,"guid":"3a57057e435b6c34780420663dff4b76","type":3}}'
+      m_SerializableObject: '{"obj":{"fileID":-4411013515898945866,"guid":"cded7daed6dedb24bbb887a5be9e91d9","type":3}}'
     m_Space: 2147483647
   m_Property:
     name: mesh
@@ -5815,7 +5815,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":5512361600001258384,"guid":"3a57057e435b6c34780420663dff4b76","type":3}}'
+      m_SerializableObject: '{"obj":{"fileID":-4411013515898945866,"guid":"cded7daed6dedb24bbb887a5be9e91d9","type":3}}'
     m_Space: 2147483647
   m_Property:
     name: mesh
