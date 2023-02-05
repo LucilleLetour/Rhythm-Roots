@@ -1,27 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using RhythmReader;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private RbmReader rbmReader;
-    
-    // Start is called before the first frame update
-    void Start()
+    public void StartAsgardLevel()
     {
-        SetLevel(RbmReader.Levels.Asgard);
+        SceneManager.LoadScene("Asgard");
     }
 
-    void SetLevel(RbmReader.Levels level)
+    public void StartHelLevel()
     {
-        rbmReader.SwitchLevel(level);
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        SceneManager.LoadScene("Hel");
     }
 }

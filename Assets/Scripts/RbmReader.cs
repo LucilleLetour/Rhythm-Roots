@@ -48,7 +48,7 @@ namespace RhythmReader
             reader.Close();
         }
         
-        private void LoadLevels()
+        /*private void LoadLevels()
         {
             var asgardReader = new StreamReader(AsgardRBMPath);
             _asgardFileLines = asgardReader.ReadToEnd().Split('\n');
@@ -70,7 +70,7 @@ namespace RhythmReader
                 Levels.Hel => _helFileLines,
                 _ => _fileLines
             };
-        }
+        }*/
     
         private Timestamp[] ReadTimestamps()
         {
