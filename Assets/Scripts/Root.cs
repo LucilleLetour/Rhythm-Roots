@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -48,7 +46,6 @@ public class Root : MonoBehaviour
                     LevelPlayer.ObstacleTypes.Split => growMS,
                     _ => visualEffectAsset
                 };
-
                 break;
             case LevelPlayer.ObstacleTypes.Left:
                 transform.position = new Vector3(-2, 0, 0);
@@ -60,7 +57,6 @@ public class Root : MonoBehaviour
                     LevelPlayer.ObstacleTypes.Split => growLS,
                     _ => visualEffectAsset
                 };
-
                 break;
             case LevelPlayer.ObstacleTypes.Right:
                 transform.position = new Vector3(2, 0, 0);
@@ -72,31 +68,16 @@ public class Root : MonoBehaviour
                     LevelPlayer.ObstacleTypes.Split => growRS,
                     _ => visualEffectAsset
                 };
-
                 break;
             case LevelPlayer.ObstacleTypes.Split:
-                switch (to)
+                visualEffectAsset = to switch
                 {
-                    case LevelPlayer.ObstacleTypes.Center:
-                        visualEffectAsset = growSM;
-                        break;
-                    case LevelPlayer.ObstacleTypes.Left:
-                        visualEffectAsset = growSL;
-                        break;
-                    case LevelPlayer.ObstacleTypes.Right:
-                        visualEffectAsset = growSR;
-                        break;
-                    case LevelPlayer.ObstacleTypes.Split:
-                        visualEffectAsset = growSS;
-                        break;
-                    default:
-                        visualEffectAsset = visualEffectAsset;
-                        break;
-                }
-
-                break;
-            default:
-                visualEffectAsset = visualEffectAsset;
+                    LevelPlayer.ObstacleTypes.Center => growSM,
+                    LevelPlayer.ObstacleTypes.Left => growSL,
+                    LevelPlayer.ObstacleTypes.Right => growSR,
+                    LevelPlayer.ObstacleTypes.Split => growSS,
+                    _ => visualEffectAsset
+                };
                 break;
         }
 

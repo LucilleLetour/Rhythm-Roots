@@ -173,14 +173,12 @@ public class LevelPlayer : MonoBehaviour
             if(i >= _nextLookaheadObstacles.Count || _nextLookaheadObstacles[i].Item1 == null) continue;
             var beatsUntil = Mathf.Ceil((_nextLookaheadObstacles[i].Item1.Time - _curLevelTime) / millisPerBeat);
             var baseLoc = baselineY - (obstacleVisualSpacing * beatsUntil);
-            var smoothLoc = baseLoc - (obstacleVisualSpacing * cameraLerp.Evaluate(
-                (((_nextLookaheadObstacles[i].Item1.Time - _curLevelTime) / millisPerBeat) + obstacleKeepBeforeCull) % 1));
+            /*var smoothLoc = baseLoc - (obstacleVisualSpacing * cameraLerp.Evaluate(
+                (((_nextLookaheadObstacles[i].Item1.Time - _curLevelTime) / millisPerBeat) + obstacleKeepBeforeCull) % 1));*/
+            var smoothLoc = baseLoc + (obstacleVisualSpacing * cameraLerp.Evaluate(
+                ((_curLevelTime % millisPerBeat) / millisPerBeat) % 1));
             _nextLookaheadObstacles[i].Item2.transform.position = new Vector3(0, smoothLoc, 0);
         }
-        /*var baseLoc2 = baselineY - (obstacleVisualSpacing * _curBeat);
-        var smoothLoc2 = baseLoc2 - (obstacleVisualSpacing * cameraLerp.Evaluate(
-            (((mspb * (_curBeat + 1) - _curLevelTime) / mspb) + obstacleKeepBeforeCull) % 1));
-        player.transform.position = new Vector3(0, smoothLoc2, 0);*/
     }
 
     private void RenderRoots()
