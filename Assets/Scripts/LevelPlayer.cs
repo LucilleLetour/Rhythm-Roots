@@ -262,6 +262,7 @@ public class LevelPlayer : MonoBehaviour
         musicPlayer.time = 1.5f;
         _started = false;
         _levelBpm = songBpm;
+        health = 3;
         InitializeObstacles();
         InitializeRoots();
     }
