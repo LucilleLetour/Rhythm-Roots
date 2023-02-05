@@ -13,4 +13,9 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Hel");
     }
+
+    public void ExitToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }

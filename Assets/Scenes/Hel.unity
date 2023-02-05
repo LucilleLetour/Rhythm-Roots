@@ -772,8 +772,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.7487409
-      value: 0.20399562
+      time: 0.21367621
+      value: 0.6733254
       inSlope: 0.79874355
       outSlope: 0.79874355
       tangentMode: 0
@@ -799,7 +799,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.26664734
+      time: 0.00022888184
       value: -0.0046081543
       inSlope: 0.10061204
       outSlope: 0.10061204
@@ -808,13 +808,13 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.8786958
     - serializedVersion: 3
-      time: 0.62674975
-      value: 0.30534655
-      inSlope: -Infinity
-      outSlope: -Infinity
+      time: 0.4922893
+      value: 0.4993773
+      inSlope: 2.0544045
+      outSlope: 2.0544045
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.13935666
       outWeight: 0.5192283
     - serializedVersion: 3
       time: 1.0069283
@@ -830,7 +830,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   obstacleLookahead: 5
   obstacleKeepBeforeCull: 3
-  obstaclePrefab: {fileID: 1288142100626270047, guid: 68d38782c9286124caf34aaa7b0676ea, type: 3}
+  obstaclePrefab: {fileID: 1288142100626270047, guid: cef2727dbe2538f4ea04193f323522d6, type: 3}
   rootKeepBeforeCull: 5
   baselineY: 2
   player: {fileID: 351331024}
@@ -1396,7 +1396,7 @@ Transform:
   m_GameObject: {fileID: 1777800267}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 10, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 462418253}
@@ -1422,7 +1422,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e00a6e82c93c2314584b51c8e4dccbb5, type: 2}
+  - {fileID: 2100000, guid: df4068b091930714895f47a74c791b27, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
