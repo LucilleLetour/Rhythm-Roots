@@ -1,0 +1,142 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &831843891345238890
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4604392362960142244}
+  - component: {fileID: -8050035518918151945}
+  - component: {fileID: 6387473429305503732}
+  - component: {fileID: 6260355499599603128}
+  m_Layer: 0
+  m_Name: Root
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4604392362960142244
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831843891345238890}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!2083052967 &-8050035518918151945
+VisualEffect:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831843891345238890}
+  m_Enabled: 1
+  m_Asset: {fileID: 8926484042661614526, guid: 93d49f34024a3904e81d1a021d799326, type: 3}
+  m_InitialEventName: OnPlay
+  m_InitialEventNameOverriden: 0
+  m_StartSeed: 0
+  m_ResetSeedOnPlay: 1
+  m_ResourceVersion: 1
+  m_PropertySheet:
+    m_Float:
+      m_Array: []
+    m_Vector2f:
+      m_Array: []
+    m_Vector3f:
+      m_Array: []
+    m_Vector4f:
+      m_Array: []
+    m_Uint:
+      m_Array: []
+    m_Int:
+      m_Array: []
+    m_Matrix4x4f:
+      m_Array: []
+    m_AnimationCurve:
+      m_Array: []
+    m_Gradient:
+      m_Array: []
+    m_NamedObject:
+      m_Array: []
+    m_Bool:
+      m_Array: []
+--- !u!73398921 &6387473429305503732
+VFXRenderer:
+  serializedVersion: 1
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831843891345238890}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &6260355499599603128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831843891345238890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a2c102788c5f334f911d08ce63b1216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfx: {fileID: -8050035518918151945}
+  growMM: {fileID: 8926484042661614526, guid: 93d49f34024a3904e81d1a021d799326, type: 3}
+  growML: {fileID: 8926484042661614526, guid: 1fb3b35f229b03843947ffc4864683a6, type: 3}
+  growMR: {fileID: 8926484042661614526, guid: 4d7f9b56f05d9344fb5f11b713a7923e, type: 3}
+  growMS: {fileID: 8926484042661614526, guid: 8af51eff904039a4799175e0e3445fa9, type: 3}
+  growLM: {fileID: 8926484042661614526, guid: 4d7f9b56f05d9344fb5f11b713a7923e, type: 3}
+  growLL: {fileID: 8926484042661614526, guid: 93d49f34024a3904e81d1a021d799326, type: 3}
+  growLR: {fileID: 8926484042661614526, guid: 02f4da3fedfbe32479c618591c2adcbd, type: 3}
+  growLS: {fileID: 8926484042661614526, guid: 0bdbfbc870d659b41b519eea8e40fde0, type: 3}
+  growRM: {fileID: 8926484042661614526, guid: 1fb3b35f229b03843947ffc4864683a6, type: 3}
+  growRL: {fileID: 8926484042661614526, guid: c3d49d5a905289248b750840d738ee59, type: 3}
+  growRR: {fileID: 8926484042661614526, guid: 93d49f34024a3904e81d1a021d799326, type: 3}
+  growRS: {fileID: 8926484042661614526, guid: cadb9153cf3e26b47b4f4551adaca452, type: 3}
+  growSM: {fileID: 8926484042661614526, guid: 89e2d502207eaa646aa5f4c53313a28f, type: 3}
+  growSL: {fileID: 8926484042661614526, guid: 9cde532bda1778c4fae8f1a102cdcf9e, type: 3}
+  growSR: {fileID: 8926484042661614526, guid: 67fb0194ee5c6604a9c64efb93e44b16, type: 3}
+  growSS: {fileID: 8926484042661614526, guid: 86449fe3006787f439f800def97a50c0, type: 3}
