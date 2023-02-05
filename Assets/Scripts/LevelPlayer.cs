@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using RhythmReader;
 using UnityEngine;
-using UnityEngine.VFX;
 
 public class LevelPlayer : MonoBehaviour
 {

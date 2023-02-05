@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Obstacle : MonoBehaviour
@@ -14,6 +15,10 @@ public class Obstacle : MonoBehaviour
             if (i == (int)type)
             {
                 types[i].SetActive(true);
+                foreach (var child in types[i].GetComponentsInChildren<Transform>(true).Skip(1))
+                {
+                    child.eulerAngles = new Vector3(Random.Range(0f, 360f), 0, 0);
+                }
             }
             else
             {
