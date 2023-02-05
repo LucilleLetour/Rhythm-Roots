@@ -108,5 +108,5 @@ Material:
     - _FresnelColor: {r: 0.14901961, g: 0.14901961, b: 0.14901961, a: 0}
     - _GradBottomColor: {r: 0.54901963, g: 0.54901963, b: 0.54901963, a: 0}
     - _GradTopColor: {r: 0.90196085, g: 0.69411767, b: 0.427451, a: 0}
-    - _Tiling: {r: 2, g: 4, b: 0, a: 0}
+    - _Tiling: {r: 5, g: 10, b: 0, a: 0}
   m_BuildTextureStacks: []
